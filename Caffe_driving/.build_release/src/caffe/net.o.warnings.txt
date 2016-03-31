@@ -1,0 +1,3 @@
+src/caffe/net.cpp:22:21: warning: ‘db_tmp’ initialized and declared ‘extern’ [enabled by default]
+ extern leveldb::DB* db_tmp=NULL;
+                     ^

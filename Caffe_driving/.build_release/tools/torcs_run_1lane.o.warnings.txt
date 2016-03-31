@@ -1,0 +1,31 @@
+tools/torcs_run_1lane.cpp: In function ‘int main(int, char**)’:
+tools/torcs_run_1lane.cpp:106:83: warning: format ‘%X’ expects argument of type ‘unsigned int’, but argument 2 has type ‘void*’ [-Wformat=]
+     printf("\n********** Memory sharing started, attached at %X **********\n", shm); 
+                                                                                   ^
+tools/torcs_run_1lane.cpp:206:9: warning: variable ‘true_fast’ set but not used [-Wunused-but-set-variable]
+     int true_fast;
+         ^
+tools/torcs_run_1lane.cpp:215:11: warning: variable ‘true_dist_LL’ set but not used [-Wunused-but-set-variable]
+     float true_dist_LL;
+           ^
+tools/torcs_run_1lane.cpp:217:11: warning: variable ‘true_dist_RR’ set but not used [-Wunused-but-set-variable]
+     float true_dist_RR;
+           ^
+tools/torcs_run_1lane.cpp:219:11: warning: variable ‘true_toMarking_LL’ set but not used [-Wunused-but-set-variable]
+     float true_toMarking_LL;
+           ^
+tools/torcs_run_1lane.cpp:222:11: warning: variable ‘true_toMarking_RR’ set but not used [-Wunused-but-set-variable]
+     float true_toMarking_RR;
+           ^
+tools/torcs_run_1lane.cpp:579:40: warning: ‘car_pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                    pt[0] = cvPoint(p1_x+car_pos,p1_y+600);  
+                                        ^
+tools/torcs_run_1lane.cpp:423:124: warning: ‘desired_speed’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+             printf("coe_steer:%.1lf, steer:%.2lf, d_speed:%d, speed:%d\n\n", coe_steer, shared->steerCmd, int(desired_speed*3.6), int(shared->speed*3.6));
+                                                                                                                            ^
+tools/torcs_run_1lane.cpp:385:19: warning: ‘pre_MR’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                   if (-pre_ML>pre_MR)
+                   ^
+tools/torcs_run_1lane.cpp:385:30: warning: ‘pre_ML’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                   if (-pre_ML>pre_MR)
+                              ^

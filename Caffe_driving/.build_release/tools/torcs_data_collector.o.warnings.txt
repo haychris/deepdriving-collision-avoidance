@@ -1,0 +1,4 @@
+tools/torcs_data_collector.cpp: In function ‘int main(int, char**)’:
+tools/torcs_data_collector.cpp:104:83: warning: format ‘%X’ expects argument of type ‘unsigned int’, but argument 2 has type ‘void*’ [-Wformat=]
+     printf("\n********** Memory sharing started, attached at %X **********\n", shm); 
+                                                                                   ^

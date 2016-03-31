@@ -1,0 +1,4 @@
+tools/torcs_visualize_database.cpp: In function ‘int main(int, char**)’:
+tools/torcs_visualize_database.cpp:90:11: warning: variable ‘fast’ set but not used [-Wunused-but-set-variable]
+     float fast;
+           ^

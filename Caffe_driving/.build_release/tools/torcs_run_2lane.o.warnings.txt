@@ -1,0 +1,28 @@
+tools/torcs_run_2lane.cpp: In function ‘int main(int, char**)’:
+tools/torcs_run_2lane.cpp:106:83: warning: format ‘%X’ expects argument of type ‘unsigned int’, but argument 2 has type ‘void*’ [-Wformat=]
+     printf("\n********** Memory sharing started, attached at %X **********\n", shm); 
+                                                                                   ^
+tools/torcs_run_2lane.cpp:206:9: warning: variable ‘true_fast’ set but not used [-Wunused-but-set-variable]
+     int true_fast;
+         ^
+tools/torcs_run_2lane.cpp:255:11: warning: unused variable ‘dist_LL_record’ [-Wunused-variable]
+     float dist_LL_record=30;
+           ^
+tools/torcs_run_2lane.cpp:256:11: warning: unused variable ‘dist_RR_record’ [-Wunused-variable]
+     float dist_RR_record=30;
+           ^
+tools/torcs_run_2lane.cpp:791:40: warning: ‘car_pos’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                    pt[0] = cvPoint(p1_x+car_pos,p1_y+600);  
+                                        ^
+tools/torcs_run_2lane.cpp:554:191: warning: ‘desired_speed’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+             printf("coe_steer:%.1lf, lane_change:%d, steer:%.2lf, d_speed:%d, speed:%d, l_clear:%d, r_clear:%d, timer_set:%d\n\n", coe_steer, lane_change, shared->steerCmd, int(desired_speed*3.6), int(shared->speed*3.6), left_clear, right_clear, timer_set);
+                                                                                                                                                                                               ^
+tools/torcs_run_2lane.cpp:467:22: warning: ‘pre_MR’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                      if (-pre_ML>pre_MR)
+                      ^
+tools/torcs_run_2lane.cpp:467:33: warning: ‘pre_ML’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                      if (-pre_ML>pre_MR)
+                                 ^
+tools/torcs_run_2lane.cpp:522:55: warning: ‘center_line’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+                shared->steerCmd = (angle - center_line/road_width) / 0.541052/coe_steer;   // steering control, "shared->steerCmd" [-1,1] is the value sent back to TORCS
+                                                       ^
