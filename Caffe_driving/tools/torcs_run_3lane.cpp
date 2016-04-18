@@ -979,7 +979,7 @@ int main(int argc, char** argv) {
 
         shared->useBrakes = v[0];
         shared->useSteering = v[1];
-        std::cout << "brakes: " << shared->useBrakes  << " Steering: " << shared->useSteering << "\n";
+        // std::cout << "brakes: " << shared->useBrakes  << " Steering: " << shared->useSteering << "\n";
         /////////
         //////////////////// END CHRIS
 

@@ -750,7 +750,7 @@ ReOneStep(double deltaTimeIncrement)
      if (*ppause == 1) 
      { 
         count++;
-        if (count>50)
+        if (count>100)
         {
            count=1;
 
@@ -809,6 +809,7 @@ ReOneStep(double deltaTimeIncrement)
 	}
 	if (s->_ncars == 2 && !printed_initial_speeds && s->currentTime > 0.001) {
 		dataFile.open ("/home/christopher/data_bin/summary_car_data.txt", std::ios::out | std::ios::app);
+		dataFile << "Training: " << curCar->info.training << "\n";
 		dataFile << "obstacleCarAhead starting_speed: " << obstacleCarAhead->pub.speed << "\n";
 		dataFile << "curCar starting_speed: " << curCar->pub.speed << "\n";
 

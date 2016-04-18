@@ -5,7 +5,8 @@ from cleaner import get_data
 K = 5
 f = open('/home/christopher/data_bin/summary_car_data.txt')
 train, test = get_data(f)
-df = train
+df = test
+
 
 from sklearn.ensemble import RandomForestClassifier, AdaBoostClassifier
 from sklearn.ensemble import RandomForestRegressor, AdaBoostRegressor
@@ -14,40 +15,6 @@ from sklearn.naive_bayes import BernoulliNB
 from sklearn.svm import SVC, SVR
 from sklearn import cross_validation
 from sklearn import metrics
-
-# for classifier in classifiers:
-# 	print classifier
-# 	preds = cross_validation.cross_val_predict(classifier, train_x, train_y, cv=K)
-# 	print metrics.classification_report(train_y, preds)
-# 	print metrics.confusion_matrix(train_y, preds)
-
-# def plot_confusion_matrix(cm, names=None, title='Confusion matrix', cmap=plt.cm.Blues):
-#     plt.imshow(cm, interpolation='nearest', cmap=cmap)
-#     plt.title(title)
-#     plt.colorbar()
-#     if names is not None:
-# 	    tick_marks = np.arange(len(names))
-# 	    plt.xticks(tick_marks, names, rotation=45)
-# 	    plt.yticks(tick_marks, names)
-#     plt.tight_layout()
-#     plt.ylabel('True label')
-#     plt.xlabel('Predicted label')
-
-
-
-# preds = cross_validation.cross_val_predict(rfc, train_x, train_y, cv=K)
-# import numpy as np
-# # Compute confusion matrix
-# cm = metrics.confusion_matrix(train_y, preds)
-# cm_normalized = cm.astype('float') / cm.sum(axis=1)[:, np.newaxis]
-# np.set_printoptions(precision=2)
-# print('Confusion matrix, with normalization')
-# print(cm_normalized)
-# plt.figure()
-# plot_confusion_matrix(cm_normalized, ['No Collision', 'Collision'])
-# plt.show()
-
-
 
 from sknn.mlp import Classifier, Layer, Regressor
 from sklearn.cross_validation import LeaveOneOut, StratifiedKFold
@@ -186,25 +153,3 @@ regression_test(*makeTrainData(x_cols, 'curCar maxAccel'))
 
 print '################# REGRESSION TEST FOR %s #################' %  'curCar avgAccel'
 regression_test(*makeTrainData(x_cols, 'curCar avgAccel'))
-
-
-
-
-x_cols = ['obstacleCarAhead starting_speed', 'curCar starting_speed', 'starting_distance', 'discretizedBrakes', 'discretizedSteering']
-
-print '################# CLASSIFICATION TEST FOR %s #################' %  'collision'
-classification_test(*makeTrainData(x_cols, 'collision'))
-
-print '################# CLASSIFICATION TEST FOR %s #################' %  'curCar went_offroad'
-classification_test(*makeTrainData(x_cols, 'curCar went_offroad'))
-
-print '################# CLASSIFICATION TEST FOR %s #################' %  'collisionOrOffroad'
-classification_test(*makeTrainData(x_cols, 'collisionOrOffroad'))
-
-print '################# REGRESSION TEST FOR %s #################' %  'curCar maxAccel'
-regression_test(*makeTrainData(x_cols, 'curCar maxAccel'))
-
-print '################# REGRESSION TEST FOR %s #################' %  'curCar avgAccel'
-regression_test(*makeTrainData(x_cols, 'curCar avgAccel'))
-# pred_probas = k_fold_predict_proba(RandomForestClassifier(), norm_train_x, partial_y, K)
-# precision, recall, thresholds = metrics.precision_recall_curve(partial_y, pred_probas)

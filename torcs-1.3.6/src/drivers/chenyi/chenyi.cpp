@@ -93,6 +93,7 @@ initTrack(int index, tTrack* track, void *carHandle, void **carParmHandle, tSitu
 static void  
 newrace(int index, tCarElt* car, tSituation *s) 
 { 
+  car->info.training = 0;
   initTCLfilter(car);
 } 
 
@@ -479,6 +480,9 @@ static void drive(int index, tCarElt* car, tSituation *s)
           //   }
           // } else {
             car->ctrl.brakeCmd = *pUseBrakes;
+            if (car->ctrl.brakeCmd > 0)
+              car->ctrl.accelCmd = 0;
+
           // }
         }
   

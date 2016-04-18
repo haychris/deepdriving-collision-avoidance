@@ -110,7 +110,7 @@ newrace(int index, tCarElt* car, tSituation *s)
     // context = zmq_ctx_new ();
     // requester = zmq_socket (context, ZMQ_REQ);
     // zmq_connect (requester, "tcp://localhost:5555");
-
+    car->info.training = 1;
     initTCLfilter(car);
 } 
 

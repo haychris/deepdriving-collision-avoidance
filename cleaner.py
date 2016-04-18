@@ -1,7 +1,7 @@
 from collections import defaultdict
 import pandas as pd
 
-def get_data(f):
+def get_data(f, num_categories=5):
 	data = defaultdict(list)
 	for line in f:
 		if line in '.\n':
@@ -20,11 +20,13 @@ def get_data(f):
 	df['speedDifference'] = df['curCar starting_speed'] - df['obstacleCarAhead starting_speed']
 	df['collision'] = (df['curCar deltaDamage'] > 0) & (df['obstacleCarAhead deltaDamage'] > 0)
 
-	NUM_CATEGORIES = 5
-	df['discretizedBrakes'] = [round(num*(NUM_CATEGORIES/10.0), 1)/(NUM_CATEGORIES/10.0) for num in df['useBrakes']]
-	df['discretizedSteering'] = [round(num*(NUM_CATEGORIES/10.0), 1)/(NUM_CATEGORIES/10.0) for num in df['useSteering']]
+	df['discretizedBrakes'] = [round(num*(num_categories/10.0), 1)/(num_categories/10.0) for num in df['useBrakes']]
+	df['discretizedSteering'] = [round(num*(num_categories/10.0), 1)/(num_categories/10.0) for num in df['useSteering']]
 
 	df['collisionOrOffroad'] = df['collision'] | df['curCar went_offroad']
+	df['collision_offroad'] = df['collision'] + 2*df['curCar went_offroad']
+	df = df.replace({'collision_offroad': {0: 'None', 1: 'Collision', 2: 'Offroad', 3: 'Collision & Offroad'}})
+
 	# df['collision'] = (df['curCar deltaDamage'] > 0)
 
 
@@ -33,4 +35,6 @@ def get_data(f):
 	df['starting_distance'] = df['starting_distance'].where(df['starting_distance'] < 1000, float('NaN'))
 
 	df = df.dropna()
-	return df
+	training = df[df['Training'] == 1]
+	testing = df[df['Training'] == 0]
+	return training, testing
