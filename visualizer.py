@@ -2,7 +2,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from cleaner import get_data
 
-f = open('/home/christopher/data_bin/train_test_1car_randomforestdecisions.txt')
+f = open('/home/christopher/data_bin/train_car_data.txt')
 train, test = get_data(f)
 df = train
 x_cols = ['curCar starting_speed', 'starting_distance', 'discretizedBrakes', 'discretizedSteering']
