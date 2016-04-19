@@ -91,6 +91,7 @@ typedef struct {
     tVisualAttributes visualAttr; 	/**< Visual attributes */
     tdble brakeCollisionAvoidance;
     tdble steeringCollisionAvoidance;
+    bool    training;    /* 1 if training. 0 if testing */
 } tInitCar;
 /* structure access short cuts */
 #define _name		info.name			/**< short cut to tInitCar#name */
