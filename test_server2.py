@@ -9,7 +9,7 @@ import time
 from cleaner import get_data
 
 K = 5
-f = open('/home/christopher/data_bin/train_car_data.txt')
+f = open('/home/christopher/data_bin/train_test_1car_randomforestdecisions.txt')
 train, test = get_data(f)
 df = train
 
