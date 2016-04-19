@@ -1,1 +1,2 @@
 *.caffemodel filter=lfs diff=lfs merge=lfs -text
+Caffe_driving/torcs/pre_trained/driving_train_1F_iter_140000.caffemodel filter=lfs diff=lfs merge=lfs -text
